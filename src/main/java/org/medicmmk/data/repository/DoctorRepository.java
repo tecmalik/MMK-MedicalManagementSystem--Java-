@@ -16,6 +16,8 @@ public interface DoctorRepository extends MongoRepository<Doctor, String>{
     List<Doctor> findByFirstName(String Firstname);
     List<Doctor> findByLastNameAndFirstName(String Lastname, String Firstname);
     List<Doctor> findBySpecialization(Specialty specialization);
+    long countBySpecialization(Specialty specialty);
+
 
 
 }
