@@ -14,12 +14,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class DoctorServicesImplTest {
 
     @Autowired
-    private DoctorServicesImpl doctorServices;
+    private DoctorRepository doctorRepository;
 
     @Test
-    void DoctorCanRegisterTest(){
-        DoctorServicesImpl doctorServices = new DoctorServicesImpl();
-        doctorServices.register("firstName","lastName","user@email.com","password", Specialty.NEUROLOGIST);
+    void A_DoctorCanSignUpTest(){
+        DoctorRequest doctorRequest = new DoctorsRequest();
+        doctor.setFirstName("FirstName");
+        doctor.setLastName("LastName");
+        doctor.setEmail("email@email.com");
+        doctor.setPassword("password");
+
 
     }
 

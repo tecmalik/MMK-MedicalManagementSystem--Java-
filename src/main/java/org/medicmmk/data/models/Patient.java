@@ -17,7 +17,6 @@ public class Patient {
     private String email;
     private String password;
     private String dateOfBirth;
-    private String phone;
-    private MedicalHistory medicalHistory;
+    private String isLoggedIn;
 
 }
