@@ -1,30 +1,38 @@
 package org.medicmmk.services;
 
+
+import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
-import org.medicmmk.data.models.Doctor;
-import org.medicmmk.data.models.Specialty;
-import org.medicmmk.data.repository.DoctorRepository;
+import org.medicmmk.services.dto.request.DoctorSignUpRequest;
+import org.medicmmk.services.dto.response.DoctorSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.hamcrest.Matchers.notNullValue;
 
 
 @SpringBootTest
 class DoctorServicesImplTest {
 
     @Autowired
-    private DoctorRepository doctorRepository;
+    private DoctorServicesImpl doctorServiceImpl;
 
     @Test
     void A_DoctorCanSignUpTest(){
-        DoctorRequest doctorRequest = new DoctorsRequest();
-        doctor.setFirstName("FirstName");
-        doctor.setLastName("LastName");
-        doctor.setEmail("email@email.com");
-        doctor.setPassword("password");
+        DoctorSignUpRequest doctorSIgnUpRequest = new DoctorSignUpRequest();
+        doctorSIgnUpRequest.setFirstName("FirstName");
+        doctorSIgnUpRequest.setLastName("LastName");
+        doctorSIgnUpRequest.setEmail("email@email.com");
+        doctorSIgnUpRequest.setPassword("password");
+        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
+        assertThat(doctorSignUpResponse, notNullValue());
+
+        }
 
 
-    }
+
+
+}
 
 }

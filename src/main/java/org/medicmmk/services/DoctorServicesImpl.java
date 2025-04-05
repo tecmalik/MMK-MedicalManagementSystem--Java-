@@ -4,6 +4,8 @@ import org.medicmmk.data.models.Doctor;
 import org.medicmmk.data.models.Patient;
 import org.medicmmk.data.models.Specialty;
 import org.medicmmk.data.repository.DoctorRepository;
+import org.medicmmk.services.dto.request.DoctorSignUpRequest;
+import org.medicmmk.services.dto.response.DoctorSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,4 +51,16 @@ public class DoctorServicesImpl implements DoctorsServices {
         return null;
     }
 
+    public DoctorSignUpResponse signUp(DoctorSignUpRequest doctorSignUpRequest) {
+        Doctor doctor = new Doctor();
+        doctor.setFirstName(doctorSignUpRequest.getFirstName());
+        doctor.setLastName(doctorSignUpRequest.getLastName());
+        doctor.setEmail(doctorSignUpRequest.getEmail());
+        doctor.setPassword(doctorSignUpRequest.getPassword());
+        doctorRepository.save(doctor);
+        DoctorSignUpResponse doctorSignUpResponse = new DoctorSignUpResponse();
+        doctorSignUpResponse.setResponse("SignUp Successful");
+        return doctorSignUpResponse;
+
+    }
 }
