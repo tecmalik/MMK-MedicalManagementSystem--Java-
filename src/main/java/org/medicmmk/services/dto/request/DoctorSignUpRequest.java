@@ -15,5 +15,6 @@ public class DoctorSignUpRequest {
     @NotBlank(message = "Email cannot be Empty")
     @Email(message= "invalid Email format")
     private String email;
+
     private String password;
 }

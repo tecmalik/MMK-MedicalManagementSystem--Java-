@@ -1,14 +1,13 @@
 package org.medicmmk.services;
 
-
-import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 import org.medicmmk.services.dto.request.DoctorSignUpRequest;
 import org.medicmmk.services.dto.response.DoctorSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 
 
@@ -28,11 +27,11 @@ class DoctorServicesImplTest {
         DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
 
+
         }
+    @Test
+    void A_DoctorCanSignInTest(){}
 
 
-
-
-}
 
 }
