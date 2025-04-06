@@ -1,11 +1,11 @@
 package org.medicmmk.services;
 
-import jakarta.validation.constraints.NotBlank;
 import org.medicmmk.data.models.Doctor;
 import org.medicmmk.data.models.Patient;
 import org.medicmmk.data.models.Specialty;
 import org.medicmmk.data.repository.DoctorRepository;
 import org.medicmmk.exceptions.DoctorDoesNotExistException;
+import org.medicmmk.exceptions.InvalidPasswordException;
 import org.medicmmk.services.dto.request.DoctorLoginRequest;
 import org.medicmmk.services.dto.request.DoctorSignUpRequest;
 import org.medicmmk.services.dto.response.DoctorLoginResponse;
@@ -35,14 +35,19 @@ public class DoctorServicesImpl implements DoctorsServices {
     public DoctorLoginResponse login(DoctorLoginRequest doctorLoginRequest) {
         Doctor doctor = doctorRepository.findByEmail(doctorLoginRequest.getEmail());
         if (doctor == null) throw new DoctorDoesNotExistException("Doctor Does Not Exist");
-        validatePassword(doctorLoginRequest.getPassword());
-
-        return null;
+        String password = doctorLoginRequest.getPassword();
+        validatePassword(password,doctor);
+        doctor.setLoggedIn(true);
+        DoctorLoginResponse doctorLoginResponse = new DoctorLoginResponse();
+        doctorLoginResponse.setLoginResponse("Login Successful");
+        return doctorLoginResponse;
     }
 
-    private void validatePassword(@NotBlank(message = "password cannot be empty") String password) {
 
+    private void validatePassword(String password, Doctor doctor) {
+        if (!doctor.getPassword().equals(password)) throw new InvalidPasswordException("Invalid Credentials");
     }
+
 
     @Override
     public List<Doctor> findAvailableDoctors() {

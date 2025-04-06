@@ -38,6 +38,7 @@ class DoctorServicesImplTest {
         DoctorLoginResponse doctorLoginResponse = doctorServiceImpl.login(doctorLoginRequest);
         assertThat(doctorLoginResponse, notNullValue());
 
+
     }
 
 }
