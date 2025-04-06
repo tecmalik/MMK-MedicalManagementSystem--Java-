@@ -2,6 +2,7 @@ package org.medicmmk.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.medicmmk.data.models.Doctor;
 import org.medicmmk.exceptions.DuplicateDoctorException;
 import org.medicmmk.exceptions.InvalidPasswordException;
 import org.medicmmk.services.dto.request.DoctorLoginRequest;
@@ -35,12 +36,12 @@ class DoctorServicesImplTest {
 
     @Test
     public void A_DoctorCanSignUpTest(){
-        DoctorSignUpRequest doctorSIgnUpRequest = new DoctorSignUpRequest();
-        doctorSIgnUpRequest.setFirstName("FirstName");
-        doctorSIgnUpRequest.setLastName("LastName");
-        doctorSIgnUpRequest.setEmail("email@email.com");
-        doctorSIgnUpRequest.setPassword("password");
-        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
+        DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
+        doctorSignUpRequest.setFirstName("FirstName");
+        doctorSignUpRequest.setLastName("LastName");
+        doctorSignUpRequest.setEmail("email@email.com");
+        doctorSignUpRequest.setPassword("password");
+        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
         assertEquals(1,doctorServicesImpl.doctorsCount());
         }
@@ -48,12 +49,12 @@ class DoctorServicesImplTest {
     @Test
     public void A_DoctorCanLoginTest(){
 
-        DoctorSignUpRequest doctorSIgnUpRequest = new DoctorSignUpRequest();
-        doctorSIgnUpRequest.setFirstName("FirstName");
-        doctorSIgnUpRequest.setLastName("LastName");
-        doctorSIgnUpRequest.setEmail("email@email.com");
-        doctorSIgnUpRequest.setPassword("password");
-        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
+        DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
+        doctorSignUpRequest.setFirstName("FirstName");
+        doctorSignUpRequest.setLastName("LastName");
+        doctorSignUpRequest.setEmail("email@email.com");
+        doctorSignUpRequest.setPassword("password");
+        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
         DoctorLoginRequest doctorLoginRequest = new DoctorLoginRequest();
         doctorLoginRequest.setEmail("email@email.com");
@@ -105,12 +106,12 @@ class DoctorServicesImplTest {
     }
     @Test
     public void DoctorCanNotLoginWithInvalidUserPassword_Test(){
-        DoctorSignUpRequest doctorSIgnUpRequest = new DoctorSignUpRequest();
-        doctorSIgnUpRequest.setFirstName("FirstName");
-        doctorSIgnUpRequest.setLastName("LastName");
-        doctorSIgnUpRequest.setEmail("email@email.com");
-        doctorSIgnUpRequest.setPassword("password");
-        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
+        DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
+        doctorSignUpRequest.setFirstName("FirstName");
+        doctorSignUpRequest.setLastName("LastName");
+        doctorSignUpRequest.setEmail("email@email.com");
+        doctorSignUpRequest.setPassword("password");
+        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
         DoctorLoginRequest doctorLoginRequest = new DoctorLoginRequest();
         doctorLoginRequest.setEmail("email@email.com");
@@ -120,17 +121,29 @@ class DoctorServicesImplTest {
     }
     @Test
     public void DoctorCanNotLoginWithInvalidUserUserName_Test(){
-        DoctorSignUpRequest doctorSIgnUpRequest = new DoctorSignUpRequest();
-        doctorSIgnUpRequest.setFirstName("FirstName");
-        doctorSIgnUpRequest.setLastName("LastName");
-        doctorSIgnUpRequest.setEmail("email@email.com");
-        doctorSIgnUpRequest.setPassword("password");
-        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
+        DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
+        doctorSignUpRequest.setFirstName("FirstName");
+        doctorSignUpRequest.setLastName("LastName");
+        doctorSignUpRequest.setEmail("email@email.com");
+        doctorSignUpRequest.setPassword("password");
+        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
         DoctorLoginRequest doctorLoginRequest = new DoctorLoginRequest();
         doctorLoginRequest.setEmail("email@email.com");
         doctorLoginRequest.setPassword("WrongPassword");
         assertThrows( InvalidPasswordException.class,()->doctorServiceImpl.login(doctorLoginRequest));
+
+    }
+
+    @Test
+    public void DoctorCanNotHaveNullInput_Test(){
+        DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
+        doctorSignUpRequest.setFirstName("FirstName");
+        doctorSignUpRequest.setEmail("sdfsfdf");
+        doctorSignUpRequest.setPassword("password");
+        DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
+
+
 
     }
 

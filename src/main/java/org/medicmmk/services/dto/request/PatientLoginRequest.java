@@ -12,7 +12,7 @@ public class PatientLoginRequest {
 
     @Email(message = "Invalid Email Format")
     @NotBlank(message = "Email cannot be Empty")
-    @NotNull(message = "email cannot be Null")
+    @NotNull(message = "Email cannot be Null")
     private String email;
     @NotBlank(message = "password cannot be empty")
     @NotNull(message = "password cannot be Null")
