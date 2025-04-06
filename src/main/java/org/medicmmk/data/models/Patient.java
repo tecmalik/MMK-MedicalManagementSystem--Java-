@@ -19,5 +19,6 @@ public class Patient {
     private String dateOfBirth;
     private String phone;
     private MedicalHistory medicalHistory;
+    private boolean IsLoggedIn;
 
 }

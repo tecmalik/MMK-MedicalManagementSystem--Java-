@@ -21,6 +21,7 @@ public class Doctor {
     private String password;
     private Specialty specialization;
     private boolean isOnCall;
+    private boolean isLoggedIn;
 
 
 }
