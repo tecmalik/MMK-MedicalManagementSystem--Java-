@@ -41,7 +41,7 @@ class DoctorServicesImplTest {
         DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
         assertEquals(1,doctorServiceImpl.doctorsCount());
-        }
+    }
 
     @Test
     public void A_DoctorCanLoginTest(){

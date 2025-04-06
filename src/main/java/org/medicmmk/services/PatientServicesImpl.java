@@ -4,10 +4,12 @@ import org.medicmmk.data.models.Doctor;
 import org.medicmmk.data.models.Patient;
 import org.medicmmk.data.models.PatientAppointment;
 import org.medicmmk.data.repository.PatientRepository;
+import org.medicmmk.exceptions.DuplicatePatientException;
 import org.medicmmk.exceptions.InvalidPasswordException;
 import org.medicmmk.exceptions.PatientDoesNotExistException;
 import org.medicmmk.services.dto.request.PatientLoginRequest;
 import org.medicmmk.services.dto.request.PatientSignUpRequest;
+import org.medicmmk.services.dto.response.DoctorSignUpResponse;
 import org.medicmmk.services.dto.response.PatientLoginResponse;
 import org.medicmmk.services.dto.response.PatientSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,7 +74,19 @@ public class PatientServicesImpl implements PatientService{
 
     @Override
     public PatientSignUpResponse signUp(PatientSignUpRequest patientSignUpRequest) {
-        return null;
+        ValidatePatientExistence(patientSignUpRequest);
+        Patient patient = new Patient();
+        patient.setFirstName(patientSignUpRequest.getFirstName());
+        patient.setLastName(patientSignUpRequest.getLastName());
+        patient.setEmail(patientSignUpRequest.getEmail());
+        patient.setPassword(patientSignUpRequest.getPassword());
+        patientRepository.save(patient);
+        PatientSignUpResponse patientSignUpResponse = new PatientSignUpResponse();
+        patientSignUpResponse.setSignUpResponse("SignUp Successful");
+        return patientSignUpResponse;
+    }
+    private void ValidatePatientExistence (PatientSignUpRequest patientSignUpRequest) {
+        if(patientRepository.findByEmail(patientSignUpRequest.getEmail())!= null) throw new DuplicatePatientException("Patient Already Exist");
     }
 
     @Override

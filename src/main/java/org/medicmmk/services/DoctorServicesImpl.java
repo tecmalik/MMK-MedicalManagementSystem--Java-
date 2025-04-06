@@ -1,8 +1,8 @@
 package org.medicmmk.services;
 
 import org.medicmmk.data.models.Doctor;
+
 import org.medicmmk.data.models.Patient;
-import org.medicmmk.data.models.Specialty;
 import org.medicmmk.data.repository.DoctorRepository;
 import org.medicmmk.exceptions.DoctorDoesNotExistException;
 import org.medicmmk.exceptions.DuplicateDoctorException;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class DoctorServicesImpl implements DoctorsServices {
 
