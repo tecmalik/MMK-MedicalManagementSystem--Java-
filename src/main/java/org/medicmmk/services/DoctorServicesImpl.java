@@ -5,6 +5,7 @@ import org.medicmmk.data.models.Patient;
 import org.medicmmk.data.models.Specialty;
 import org.medicmmk.data.repository.DoctorRepository;
 import org.medicmmk.exceptions.DoctorDoesNotExistException;
+import org.medicmmk.exceptions.DuplicateDoctorException;
 import org.medicmmk.exceptions.InvalidPasswordException;
 import org.medicmmk.services.dto.request.DoctorLoginRequest;
 import org.medicmmk.services.dto.request.DoctorSignUpRequest;
@@ -60,6 +61,7 @@ public class DoctorServicesImpl implements DoctorsServices {
     }
 
     public DoctorSignUpResponse signUp(DoctorSignUpRequest doctorSignUpRequest) {
+        ValidateDoctorsExistence(doctorSignUpRequest);
         Doctor doctor = new Doctor();
         doctor.setFirstName(doctorSignUpRequest.getFirstName());
         doctor.setLastName(doctorSignUpRequest.getLastName());
@@ -70,6 +72,10 @@ public class DoctorServicesImpl implements DoctorsServices {
         doctorSignUpResponse.setResponse("SignUp Successful");
         return doctorSignUpResponse;
 
+    }
+
+    private void ValidateDoctorsExistence (DoctorSignUpRequest doctorSignUpRequest) {
+        if(doctorRepository.findByEmail(doctorSignUpRequest.getEmail())!= null) throw new DuplicateDoctorException("Doctor Already Exist");
     }
 
     @Override
