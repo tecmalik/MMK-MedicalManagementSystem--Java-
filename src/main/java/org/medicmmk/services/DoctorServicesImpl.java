@@ -21,17 +21,6 @@ public class DoctorServicesImpl implements DoctorsServices {
     private DoctorRepository doctorRepository;
 
     @Override
-    public void register(String firstName, String lastName, String email, String password, Specialty specialty) {
-        Doctor doctor = new Doctor();
-        doctor.setFirstName(firstName);
-        doctor.setLastName(lastName);
-        doctor.setEmail(email);
-        doctor.setPassword(password);
-        doctor.setSpecialization(specialty);
-        doctorRepository.save(doctor);
-    }
-
-    @Override
     public DoctorLoginResponse login(DoctorLoginRequest doctorLoginRequest) {
         Doctor doctor = doctorRepository.findByEmail(doctorLoginRequest.getEmail());
         if (doctor == null) throw new DoctorDoesNotExistException("Doctor Does Not Exist");
@@ -86,5 +75,10 @@ public class DoctorServicesImpl implements DoctorsServices {
     @Override
     public long doctorsCount() {
         return doctorRepository.count();
+    }
+
+    @Override
+    public void deleteAllDoctors() {
+        doctorRepository.deleteAll();
     }
 }

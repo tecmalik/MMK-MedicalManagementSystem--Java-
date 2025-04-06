@@ -1,5 +1,6 @@
 package org.medicmmk.services;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.medicmmk.services.dto.request.DoctorLoginRequest;
 import org.medicmmk.services.dto.request.DoctorSignUpRequest;
@@ -20,6 +21,12 @@ class DoctorServicesImplTest {
     @Autowired
     private DoctorServicesImpl doctorServiceImpl;
 
+    @BeforeEach
+    public void setUp() {
+        doctorServiceImpl.deleteAllDoctors();
+    }
+
+
     @Test
     void A_DoctorCanSignUpTest(){
         DoctorSignUpRequest doctorSIgnUpRequest = new DoctorSignUpRequest();
@@ -37,7 +44,6 @@ class DoctorServicesImplTest {
         doctorLoginRequest.setPassword("password");
         DoctorLoginResponse doctorLoginResponse = doctorServiceImpl.login(doctorLoginRequest);
         assertThat(doctorLoginResponse, notNullValue());
-
 
     }
 

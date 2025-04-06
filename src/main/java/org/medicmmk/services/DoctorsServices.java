@@ -13,7 +13,6 @@ import java.util.List;
 public interface DoctorsServices {
 
 
-   void register(String firstName, String lastName, String email, String password, Specialty specialty);
    DoctorLoginResponse login(DoctorLoginRequest doctorLoginRequest);
    List<Doctor> findAvailableDoctors();
    void setAvailability(String doctorId, String availability);
@@ -21,5 +20,5 @@ public interface DoctorsServices {
    Doctor findById(String doctorId);
    DoctorSignUpResponse signUp(DoctorSignUpRequest doctorSignUpRequest);
    long doctorsCount();
-
+   void deleteAllDoctors();
 }
