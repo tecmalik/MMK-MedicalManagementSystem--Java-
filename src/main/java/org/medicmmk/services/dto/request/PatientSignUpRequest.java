@@ -8,7 +8,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class DoctorSignUpRequest {
+public class PatientSignUpRequest {
+
     @NotBlank(message = "Email cannot be Empty")
     @NotNull(message = "name cannot be Null")
     private String FirstName;
@@ -21,4 +22,5 @@ public class DoctorSignUpRequest {
     @NotNull(message = "password cannot be Null")
     @NotBlank(message = "password cannot be empty")
     private String password;
+
 }

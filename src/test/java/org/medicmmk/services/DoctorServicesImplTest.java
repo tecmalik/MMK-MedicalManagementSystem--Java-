@@ -44,7 +44,6 @@ class DoctorServicesImplTest {
         doctorLoginRequest.setPassword("password");
         DoctorLoginResponse doctorLoginResponse = doctorServiceImpl.login(doctorLoginRequest);
         assertThat(doctorLoginResponse, notNullValue());
-
     }
 
 }

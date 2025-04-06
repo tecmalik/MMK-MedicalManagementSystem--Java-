@@ -6,19 +6,15 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
-public class DoctorSignUpRequest {
+@Getter
+public class PatientLoginRequest {
+
+    @Email(message = "Invalid Email Format")
     @NotBlank(message = "Email cannot be Empty")
-    @NotNull(message = "name cannot be Null")
-    private String FirstName;
-    @NotBlank(message = "Email cannot be Empty")
-    private String LastName;
-    @NotNull(message = "name cannot be Null")
-    @NotBlank(message = "Email cannot be Empty")
-    @Email(message= "invalid Email format")
+    @NotNull(message = "email cannot be Null")
     private String email;
-    @NotNull(message = "password cannot be Null")
     @NotBlank(message = "password cannot be empty")
+    @NotNull(message = "password cannot be Null")
     private String password;
 }
