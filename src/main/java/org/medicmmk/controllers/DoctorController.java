@@ -1,4 +1,4 @@
-package org.medicmmk.controller;
+package org.medicmmk.controllers;
 
 public class DoctorController {
 }

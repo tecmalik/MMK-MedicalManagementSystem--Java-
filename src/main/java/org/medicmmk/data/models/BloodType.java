@@ -1,4 +1,4 @@
-package org.medicmmk.data.model;
+package org.medicmmk.data.models;
 
 public enum BloodType {
     O_POSITIVE,
@@ -8,5 +8,5 @@ public enum BloodType {
     B_POSITIVE,
     B_NEGATIVE,
     AB_POSITIVE,
-    AB_NEGATIVE
+    AB_NEGATIVE;
 }
