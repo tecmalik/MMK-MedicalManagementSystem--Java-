@@ -13,11 +13,11 @@ public interface DoctorsServices {
 
 
    DoctorLoginResponse login(DoctorLoginRequest doctorLoginRequest);
+   DoctorSignUpResponse signUp(DoctorSignUpRequest doctorSignUpRequest);
+   long doctorsCount();
+   void deleteAllDoctors();
    List<Doctor> findAvailableDoctors();
    void setAvailability(String doctorId, String availability);
    List<Patient> findAvailablePatients();
    Doctor findById(String doctorId);
-   DoctorSignUpResponse signUp(DoctorSignUpRequest doctorSignUpRequest);
-   long doctorsCount();
-   void deleteAllDoctors();
 }

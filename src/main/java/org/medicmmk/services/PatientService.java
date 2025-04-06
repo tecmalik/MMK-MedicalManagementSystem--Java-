@@ -19,8 +19,9 @@ public interface PatientService {
     void bookAppointment(Doctor doctor, LocalDate date, LocalTime time);
     List<PatientAppointment> getListOfAppointments();
     void updatePatientProfile(String PatientId, String updates);
+
     public PatientLoginResponse login(PatientLoginRequest patientLoginRequest);
     void deleteAllPatients();
-    public PatientSignUpResponse signUp(PatientSignUpRequest patientSignUpRequest);
+    PatientSignUpResponse signUp(PatientSignUpRequest patientSignUpRequest);
     long patientsCount();
 }
