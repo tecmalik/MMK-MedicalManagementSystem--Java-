@@ -2,7 +2,6 @@ package org.medicmmk.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.medicmmk.data.models.Doctor;
 import org.medicmmk.exceptions.DuplicateDoctorException;
 import org.medicmmk.exceptions.InvalidPasswordException;
 import org.medicmmk.services.dto.request.DoctorLoginRequest;
