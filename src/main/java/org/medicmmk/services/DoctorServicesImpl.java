@@ -1,5 +1,6 @@
 package org.medicmmk.services;
 
+import lombok.extern.slf4j.Slf4j;
 import org.medicmmk.data.models.Doctor;
 
 import org.medicmmk.data.models.Patient;
@@ -12,11 +13,13 @@ import org.medicmmk.services.dto.request.DoctorSignUpRequest;
 import org.medicmmk.services.dto.response.DoctorLoginResponse;
 import org.medicmmk.services.dto.response.DoctorSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 
-@Service
+@Component
+//@Slf4j
 public class DoctorServicesImpl implements DoctorsServices {
 
     @Autowired

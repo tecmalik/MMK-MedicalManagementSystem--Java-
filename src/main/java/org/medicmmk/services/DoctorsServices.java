@@ -2,7 +2,6 @@ package org.medicmmk.services;
 
 import org.medicmmk.data.models.Doctor;
 import org.medicmmk.data.models.Patient;
-import org.medicmmk.data.models.Specialty;
 import org.medicmmk.services.dto.request.DoctorLoginRequest;
 import org.medicmmk.services.dto.request.DoctorSignUpRequest;
 import org.medicmmk.services.dto.response.DoctorLoginResponse;
