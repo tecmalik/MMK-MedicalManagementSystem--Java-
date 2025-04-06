@@ -15,7 +15,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -25,8 +24,6 @@ class DoctorServicesImplTest {
 
     @Autowired
     private DoctorServicesImpl doctorServiceImpl;
-    @Autowired
-    private DoctorServicesImpl doctorServicesImpl;
 
     @BeforeEach
     public void setUp() {
@@ -43,7 +40,7 @@ class DoctorServicesImplTest {
         doctorSignUpRequest.setPassword("password");
         DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
-        assertEquals(1,doctorServicesImpl.doctorsCount());
+        assertEquals(1,doctorServiceImpl.doctorsCount());
         }
 
     @Test
@@ -74,7 +71,7 @@ class DoctorServicesImplTest {
         doctorSignUpRequest.setPassword("password");
         DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
-        assertEquals(1,doctorServicesImpl.doctorsCount());
+        assertEquals(1,doctorServiceImpl.doctorsCount());
         DoctorSignUpRequest doctorSignUpRequestTwo = new DoctorSignUpRequest();
         doctorSignUpRequestTwo.setFirstName("SecondFirstName");
         doctorSignUpRequestTwo.setLastName("SecondLastName");
@@ -82,7 +79,7 @@ class DoctorServicesImplTest {
         doctorSignUpRequestTwo.setPassword("SecondPassword");
         DoctorSignUpResponse doctorSignUpResponseTwo = doctorServiceImpl.signUp(doctorSignUpRequestTwo);
         assertThat(doctorSignUpResponseTwo, notNullValue());
-        assertEquals(2,doctorServicesImpl.doctorsCount());
+        assertEquals(2,doctorServiceImpl.doctorsCount());
 
     }
 
@@ -95,14 +92,14 @@ class DoctorServicesImplTest {
         doctorSignUpRequest.setPassword("password");
         DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSignUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
-        assertEquals(1,doctorServicesImpl.doctorsCount());
+        assertEquals(1,doctorServiceImpl.doctorsCount());
         DoctorSignUpRequest doctorSignUpRequestTwo = new DoctorSignUpRequest();
         doctorSignUpRequestTwo.setFirstName("FirstName");
         doctorSignUpRequestTwo.setLastName("LastName");
         doctorSignUpRequestTwo.setEmail("email@email.com");
         doctorSignUpRequestTwo.setPassword("password");
         assertThrows( DuplicateDoctorException.class , ()-> doctorServiceImpl.signUp(doctorSignUpRequestTwo));
-        assertEquals(1,doctorServicesImpl.doctorsCount());
+        assertEquals(1,doctorServiceImpl.doctorsCount());
     }
     @Test
     public void DoctorCanNotLoginWithInvalidUserPassword_Test(){

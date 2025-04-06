@@ -17,6 +17,6 @@ public class Patient {
     private String email;
     private String password;
     private String dateOfBirth;
-    private String isLoggedIn;
+    private boolean isLoggedIn;
 
 }
