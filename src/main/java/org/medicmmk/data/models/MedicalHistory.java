@@ -12,8 +12,7 @@ import java.time.LocalTime;
 @Data
 @AllArgsConstructor
 public class MedicalHistory {
-    @Id
-    private String medicalID;
+
     private String patientID;
     private String illnesses;
     private String allergies;
@@ -23,6 +22,5 @@ public class MedicalHistory {
     private boolean isSurgery;
     private String familyMedicalHistory;
     private LocalTime lastUpdateTime ;
-
 
 }

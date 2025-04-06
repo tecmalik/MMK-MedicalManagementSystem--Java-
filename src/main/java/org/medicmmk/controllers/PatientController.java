@@ -1,14 +1,9 @@
 package org.medicmmk.controllers;
 
 import jakarta.validation.Valid;
-import org.medicmmk.services.DoctorServicesImpl;
 import org.medicmmk.services.PatientServicesImpl;
-import org.medicmmk.services.dto.request.DoctorLoginRequest;
-import org.medicmmk.services.dto.request.DoctorSignUpRequest;
 import org.medicmmk.services.dto.request.PatientLoginRequest;
 import org.medicmmk.services.dto.request.PatientSignUpRequest;
-import org.medicmmk.services.dto.response.DoctorLoginResponse;
-import org.medicmmk.services.dto.response.DoctorSignUpResponse;
 import org.medicmmk.services.dto.response.PatientLoginResponse;
 import org.medicmmk.services.dto.response.PatientSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +28,8 @@ public class PatientController {
     public PatientLoginResponse loginPatient(@RequestBody PatientLoginRequest patientLoginRequest){
         return patientServices.login(patientLoginRequest);
     }
+
+
 
 
 
