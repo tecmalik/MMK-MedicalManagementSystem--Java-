@@ -37,6 +37,7 @@ class DoctorServicesImplTest {
         DoctorSignUpResponse doctorSignUpResponse = doctorServiceImpl.signUp(doctorSIgnUpRequest);
         assertThat(doctorSignUpResponse, notNullValue());
         }
+
     @Test
     void A_DoctorCanLogin(){
         DoctorLoginRequest doctorLoginRequest = new DoctorLoginRequest();
@@ -44,6 +45,7 @@ class DoctorServicesImplTest {
         doctorLoginRequest.setPassword("password");
         DoctorLoginResponse doctorLoginResponse = doctorServiceImpl.login(doctorLoginRequest);
         assertThat(doctorLoginResponse, notNullValue());
+
     }
 
 }
