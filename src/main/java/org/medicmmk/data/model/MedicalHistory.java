@@ -13,7 +13,6 @@ import java.util.List;
 public class MedicalHistory {
     @Id
     private String id;
-
     @DBRef
     private Patient patient;
     private List<String> illnesses;

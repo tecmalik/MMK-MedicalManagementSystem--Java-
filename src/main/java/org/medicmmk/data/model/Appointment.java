@@ -6,19 +6,20 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+
 import java.time.LocalTime;
 
 @Data
-@Document(collection = "doctor schedule")
-public class DoctorSchedule {
+@Document(collection = "appointment")
+public class Appointment {
     @Id
     private String id;
+    private LocalDate appointmentDate;
+    private LocalTime startTime;
+    private LocalTime endTime;
     @DBRef
     private Patient patient;
     @DBRef
     private Doctor doctor;
-    @DBRef
-    private PatientAppointment appointment;
-    private LocalDate appointmentDate;
-    private LocalTime appointmentTime;
+    private Status status;
 }

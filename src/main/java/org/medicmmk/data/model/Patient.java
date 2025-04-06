@@ -19,5 +19,5 @@ public class Patient {
     @DBRef
     private MedicalHistory medicalHIstory;
     @DBRef
-    private PatientAppointment patientAppointment;
+    private Appointment patientAppointment;
 }
