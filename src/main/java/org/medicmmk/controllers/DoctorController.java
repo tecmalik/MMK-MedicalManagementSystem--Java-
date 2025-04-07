@@ -1,10 +1,10 @@
 package org.medicmmk.controllers;
 
 
-import org.medicmmk.data.model.Doctor;
-import org.medicmmk.dtorequest.DoctorLoginRequest;
-import org.medicmmk.dtorequest.GetDoctorProfile;
-import org.medicmmk.dtorequest.RegisterDoctorRequest;
+import org.medicmmk.data.models.Doctor;
+import org.medicmmk.dtos.requests.DoctorLoginRequest;
+import org.medicmmk.dtos.requests.GetDoctorProfile;
+import org.medicmmk.dtos.requests.RegisterDoctorRequest;
 import org.medicmmk.services.DoctorService;
 import org.medicmmk.services.DoctorServiceImpl;
 import org.springframework.http.ResponseEntity;

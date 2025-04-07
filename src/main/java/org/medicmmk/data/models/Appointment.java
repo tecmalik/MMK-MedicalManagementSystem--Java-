@@ -1,25 +1,20 @@
-package org.medicmmk.data.model;
+package org.medicmmk.data.models;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDate;
-
-import java.time.LocalTime;
+import org.medicmmk.data.model.Patient;
+import java.time.LocalDateTime;
 
 @Data
 @Document(collection = "appointment")
 public class Appointment {
     @Id
     private String id;
-    private LocalDate appointmentDate;
-    private LocalTime startTime;
-    private LocalTime endTime;
-    @DBRef
+    private LocalDateTime date;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private Patient patient;
-    @DBRef
     private Doctor doctor;
     private Status status;
 }

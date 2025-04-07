@@ -1,12 +1,13 @@
-package org.medicmmk.dtorequest;
+package org.medicmmk.dtos.requests;
+
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class GetDoctorProfile {
-    private String username;
+public class PatientLoginRequest {
+
     private String email;
     private String password;
 }

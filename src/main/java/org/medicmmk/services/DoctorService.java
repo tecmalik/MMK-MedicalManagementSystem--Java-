@@ -1,8 +1,8 @@
 package org.medicmmk.services;
 
-import org.medicmmk.data.model.Doctor;
-import org.medicmmk.dtorequest.DoctorLoginRequest;
-import org.medicmmk.dtorequest.RegisterDoctorRequest;
+import org.medicmmk.data.models.Doctor;
+import org.medicmmk.dtos.requests.DoctorLoginRequest;
+import org.medicmmk.dtos.requests.RegisterDoctorRequest;
 
 import java.util.List;
 
