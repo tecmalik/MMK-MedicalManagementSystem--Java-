@@ -1,8 +1,7 @@
-package org.medicmmk.data.model;
+package org.medicmmk.data.models;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -16,7 +15,7 @@ public class Doctor {
     private String lastName;
     private String email;
     private String phone;
-    private String gender;
+    private Gender gender;
     private String dateOfBirth;
     private Specialisation specialisation;
     private boolean isOnCall;
