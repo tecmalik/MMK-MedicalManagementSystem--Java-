@@ -1,16 +1,14 @@
 package org.medicmmk.services;
 
-import org.medicmmk.data.models.Doctor;
 import org.medicmmk.data.models.Patient;
-import org.medicmmk.data.models.PatientAppointment;
 import org.medicmmk.data.repository.PatientRepository;
 import org.medicmmk.exceptions.DuplicatePatientException;
 import org.medicmmk.exceptions.InvalidPasswordException;
 import org.medicmmk.exceptions.PatientDoesNotExistException;
-import org.medicmmk.services.dtos.requests.PatientLoginRequest;
-import org.medicmmk.services.dtos.requests.PatientSignUpRequest;
-import org.medicmmk.services.dtos.response.PatientLoginResponse;
-import org.medicmmk.services.dtos.response.PatientSignUpResponse;
+import org.medicmmk.dtos.requests.PatientLoginRequest;
+import org.medicmmk.dtos.requests.PatientSignUpRequest;
+import org.medicmmk.dtos.response.PatientLoginResponse;
+import org.medicmmk.dtos.response.PatientSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +17,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 @Service
-public class PatientServicesImpl implements PatientService{
+public class PatientServicesImpl implements PatientService {
 
     @Autowired
     PatientRepository patientRepository;

@@ -2,23 +2,25 @@ package org.medicmmk.data.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 @Data
-@NoArgsConstructor
+@Document(collection = "patient")
 public class Patient {
     @Id
-    private String iD;
+    private String id;
+    private String username;
+    private String password;
     private String firstName;
     private String lastName;
-    private Gender gender;
     private String email;
-    private String password;
-    private String dateOfBirth;
     private String phone;
-    private MedicalHistory medicalHistory;
-    private boolean IsLoggedIn;
-
-}
+    private String gender;
+    private String dateOfBirth;
+    @DBRef
+    private MedicalHistory medicalHIstory;
+    @DBRef
+    private Appointment patientAppointment;

@@ -1,12 +1,10 @@
 package org.medicmmk.services;
 
-import org.medicmmk.data.models.Doctor;
 import org.medicmmk.data.models.Patient;
-import org.medicmmk.data.models.PatientAppointment;
-import org.medicmmk.services.dtos.requests.PatientLoginRequest;
-import org.medicmmk.services.dtos.requests.PatientSignUpRequest;
-import org.medicmmk.services.dtos.response.PatientLoginResponse;
-import org.medicmmk.services.dtos.response.PatientSignUpResponse;
+import org.medicmmk.dtos.requests.PatientLoginRequest;
+import org.medicmmk.dtos.requests.PatientSignUpRequest;
+import org.medicmmk.dtos.response.PatientLoginResponse;
+import org.medicmmk.dtos.response.PatientSignUpResponse;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

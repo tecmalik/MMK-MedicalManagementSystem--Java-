@@ -4,10 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.medicmmk.exceptions.DuplicatePatientException;
 import org.medicmmk.exceptions.InvalidPasswordException;
-import org.medicmmk.services.dtos.requests.PatientLoginRequest;
-import org.medicmmk.services.dtos.requests.PatientSignUpRequest;
-import org.medicmmk.services.dtos.response.PatientLoginResponse;
-import org.medicmmk.services.dtos.response.PatientSignUpResponse;
+import org.medicmmk.dtos.requests.PatientLoginRequest;
+import org.medicmmk.dtos.requests.PatientSignUpRequest;
+import org.medicmmk.dtos.response.PatientLoginResponse;
+import org.medicmmk.dtos.response.PatientSignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,4 +1,4 @@
-package org.medicmmk.services.dtos.response;
+package org.medicmmk.dtos.response;
 
 import lombok.Getter;
 import lombok.Setter;
