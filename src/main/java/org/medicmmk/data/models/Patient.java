@@ -20,7 +20,10 @@ public class Patient {
     private String phone;
     private String gender;
     private String dateOfBirth;
-    @DBRef
-    private MedicalHistory medicalHIstory;
-    @DBRef
-    private Appointment patientAppointment;
+    private boolean isLoggedIn;
+//    @DBRef
+//    private MedicalHistory medicalHistory;
+//    @DBRef
+//    private Appointment patientAppointment;
+
+}

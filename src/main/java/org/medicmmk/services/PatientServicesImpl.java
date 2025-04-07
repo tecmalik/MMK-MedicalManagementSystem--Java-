@@ -29,15 +29,15 @@ public class PatientServicesImpl implements PatientService {
         return null;
     }
 
-    @Override
-    public void bookAppointment(Doctor doctor, LocalDate date, LocalTime time) {
-
-    }
-
-    @Override
-    public List<PatientAppointment> getListOfAppointments() {
-        return List.of();
-    }
+//    @Override
+//    public void bookAppointment(Doctor doctor, LocalDate date, LocalTime time) {
+//
+//    }
+//
+//    @Override
+//    public List<PatientAppointment> getListOfAppointments() {
+//        return List.of();
+//    }
 
     @Override
     public void updatePatientProfile(String PatientId, String updates) {
@@ -51,7 +51,7 @@ public class PatientServicesImpl implements PatientService {
         if (patient == null) throw new PatientDoesNotExistException("Patient Does Not Exist");
         String password = patientLoginRequest.getPassword();
         validatePassword(password,patient);
-        patient.setIsLoggedIn(true);
+        patient.setLoggedIn(true);
         PatientLoginResponse patientLoginResponse = new PatientLoginResponse();
         patientLoginResponse.setPatientLoginResponse("Login Successful");
         return patientLoginResponse;

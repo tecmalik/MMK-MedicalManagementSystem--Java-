@@ -13,8 +13,8 @@ import java.util.List;
 public interface PatientService {
 
     Patient getPatient(String email);
-    void bookAppointment(Doctor doctor, LocalDate date, LocalTime time);
-    List<PatientAppointment> getListOfAppointments();
+//    void bookAppointment(Doctor doctor, LocalDate date, LocalTime time);
+//    List<PatientAppointment> getListOfAppointments();
     void updatePatientProfile(String PatientId, String updates);
 
     PatientLoginResponse login(PatientLoginRequest patientLoginRequest);
