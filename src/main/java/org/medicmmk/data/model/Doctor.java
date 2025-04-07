@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Doctor {
     @Id
     private String id;
+    private String username;
+    private String password;
     private String firstName;
     private String lastName;
     private String email;
