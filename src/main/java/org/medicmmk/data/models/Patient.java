@@ -1,4 +1,4 @@
-package org.medicmmk.data.model;
+package org.medicmmk.data.models;
 
 import lombok.Data;
 import org.medicmmk.data.models.Appointment;
