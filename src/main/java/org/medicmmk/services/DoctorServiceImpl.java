@@ -2,9 +2,9 @@ package org.medicmmk.services;
 
 import org.medicmmk.data.model.Doctor;
 import org.medicmmk.data.repository.DoctorRepository;
-import org.medicmmk.dtorequest.DoctorLoginRequest;
-import org.medicmmk.dtorequest.RegisterDoctorRequest;
-import org.medicmmk.exception.IncorrectPasswordException;
+import org.medicmmk.dtos.DoctorLoginRequest;
+import org.medicmmk.dtos.RegisterDoctorRequest;
+import org.medicmmk.exceptions.IncorrectPasswordException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

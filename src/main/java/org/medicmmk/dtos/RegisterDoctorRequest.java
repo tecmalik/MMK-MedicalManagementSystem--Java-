@@ -1,4 +1,4 @@
-package org.medicmmk.dtorequest;
+package org.medicmmk.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
