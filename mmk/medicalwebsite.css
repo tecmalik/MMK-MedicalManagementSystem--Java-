@@ -6,15 +6,24 @@
 .navBar{
     display: flex;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 30px 50px;
+    padding-left :5px;
 }
 .body{
-    background-color: white;
+    /* background-color: white; */
+    /* background-color:#AAD9E7; */
+    padding-bottom: 100px; 
+    margin-left: 200px; 
+    width : 1440px;
+    height: 1150px; 
+    /* justify-items: center; */
+    /* margin-left: 200px;   */
+
 
 }
 
 .navLinks {
-    test-decoration: none;
+    text-decoration : none;
     color: black;
 }
 
@@ -24,12 +33,34 @@
     display: inline-block;
     cursor: pointer;
     border: none;
+
+    border-color: #42AA7B;
 }
+#loginButton{
+    background-color: #42AA7B;
+    color : #ffffff;
+    border-radius: 8px;
+    height : 22px;
+    width : 70px;
+    border:none ;
+
+}
+#registrationButton{
+    background-color: rgb(10, 10, 10);
+    color : #ffffff;
+    border-radius: 8px;
+    height : 22px;
+    width : 70px;
+    border:none ;
+
+
+}
+
 .Register{
     height: 20px;
     background-color: black;
     color: white;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     width: 100px;
     padding-left: 10px;
@@ -39,18 +70,25 @@
     display: inline-block;
     width: 300px;
     display: flex;
+    margin-top: 50px ;
 
 }
 .imageone{
-    width: 600px;
+    /* width: 600px; */
     display: inline-block;
+    height:420px ;
 
 }
 .text{
     background-color: rgb(248, 248, 255);
-    padding-left: 20px;
-    padding-right: 500px;
+    /*  padding-left: 20px; */
+    padding-right: 500px; 
+    height:420px ;
 }
+.test h1 {
+    padding-right : 200px;
+}
+
 .reviews{
     margin-top: 30px;
     margin-left: 20px;
